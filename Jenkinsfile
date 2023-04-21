@@ -21,10 +21,7 @@ pipeline {
         sh 'terraform plan'
       }
     }
-    stage('Apply Resources') {
-      input {
-        message "Do you want to proceed for production deployment?"
-      }
+    stage('Apply Resources){
       steps {
         sh 'terraform apply -auto-approve'
       }
