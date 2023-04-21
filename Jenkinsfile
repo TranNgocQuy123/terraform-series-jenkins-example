@@ -13,17 +13,25 @@ pipeline {
   stages {
     stage('Init Provider') {
       steps {
-        sh 'terraform init'
+        echo 'Testing'
+        //sh 'terraform init'
       }
     }
     stage('Plan Resources') {
       steps {
-        sh 'terraform plan'
+        echo 'Testing'
+        // sh 'terraform plan'
       }
     }
     stage('Apply Resources'){
       steps {
-        sh 'terraform apply -auto-approve'
+       echo 'Testing'
+       // sh 'terraform apply -auto-approve'
+      }
+    }
+    stage('Destroy'){
+      steps {
+        sh 'terraform destroy -auto-approve'
       }
     }
   }
